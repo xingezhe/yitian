@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>张无忌</button>
+    <button>赵敏</button>
+    <button>周芷若</button>
+    <button>小昭</button>
+    <button>殷离</button>
+  </body>
+  <script type="module">
+    import {zhang,zhao,zhou,xiao,yin} from "./person.js";
+    const btn = document.querySelectorAll("button");
+    btn[0].addEventListener("click", () => {
+      zhang.say()
+    });
+    btn[1].addEventListener("click", () => {
+      zhao.say()
+    });
+    btn[2].addEventListener("click", () => {
+      zhou.say()
+    });
+    btn[3].addEventListener("click", () => {
+      xiao.say()
+    });
+    btn[4].addEventListener("click", () => {
+      yin.say()
+    });
+  </script>
+</html>
