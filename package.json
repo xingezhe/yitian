@@ -1,0 +1,23 @@
+{
+  "name": "yitian",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xingezhe/yitian.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xingezhe/yitian/issues"
+  },
+  "homepage": "https://github.com/xingezhe/yitian#readme",
+  "type": "module",
+  "dependencies": {
+    "jquery": "^3.6.4"
+  }
+}

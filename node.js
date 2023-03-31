@@ -8,9 +8,12 @@ export class Person {
       this[e] = obj[e];
     });
   }
-  index = 0;
+  index = -1;
   say = function () {
     this.index++;
-    return `${this.name}：${this.says[this.index]}`;
+    return {
+      name:this.name,
+      say:this.says[this.index]
+    }
   };
 }
