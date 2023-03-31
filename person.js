@@ -40,4 +40,4 @@ const yin = new Person({
   name: "殷离",
   says: ["殷离语录1", "殷离语录2", "殷离语录3", "殷离语录4", "殷离语录5"],
 });
-export { zhang, zhao, zhou, xiao, yin };
+export {zhang, zhao, zhou, xiao, yin};

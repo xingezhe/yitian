@@ -10,7 +10,7 @@ export class Person {
   }
   index = 0;
   say = function () {
-    console.log(`${this.name}：${this.says[this.index]}`);
     this.index++;
+    return `${this.name}：${this.says[this.index]}`;
   };
 }
