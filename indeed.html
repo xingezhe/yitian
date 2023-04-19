@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
       * {
         padding: 0;
@@ -35,32 +34,31 @@
         margin-top: 20px;
       }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   </head>
   <body>
     <div class="renwu"></div>
     <div class="says"></div>
   </body>
   <script type="module">
-    import { persons } from "./person.js";
-    let el = "";
-    persons.forEach((e) => {
-      return (el += `<button>${e.name}</button>`);
-    });
+    import { createPerson } from "./person.js";
+    createPerson();
+    // let el = "";
+    // persons.forEach((e) => {
+    //   return (el += `<button>${e.name}</button>`);
+    // });
 
-    const renwu = document.querySelector(".renwu");
-    const says = document.querySelector(".says");
-    renwu.innerHTML = el;
-    let btns = document.querySelectorAll("button");
-    btns.forEach((e, i, a) => {
-      e.onclick = () => {
-        const saydiv = document.createElement("div");
-        saydiv.className = "saydiv";
-        saydiv.innerHTML = JSON.stringify(persons[i].say());
-        says.appendChild(saydiv);
-      };
-    });
-  </script>
-  <script>
-    console.log($);
+    // const renwu = document.querySelector(".renwu");
+    // const says = document.querySelector(".says");
+    // renwu.innerHTML = el;
+    // let btns = document.querySelectorAll("button");
+    // btns.forEach((e, i, a) => {
+    //   e.onclick = () => {
+    //     const saydiv = document.createElement("div");
+    //     saydiv.className = "saydiv";
+    //     saydiv.innerHTML = JSON.stringify(persons[i].say());
+    //     says.appendChild(saydiv);
+    //   };
+    // });
   </script>
 </html>
