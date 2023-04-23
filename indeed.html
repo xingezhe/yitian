@@ -1,64 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-      }
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .renwu {
-        width: 600px;
-        height: 60px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-      }
-      button {
-        padding: 5px 20px;
-      }
-      .says {
-        width: 600px;
-        height: 800px;
-        border-radius: 20px;
-        background-color: lightgray;
-        border: 10px darkgoldenrod double;
-        margin-top: 20px;
-      }
-    </style>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  </head>
-  <body>
-    <div class="renwu"></div>
-    <div class="says"></div>
-  </body>
-  <script type="module">
-    import { createPerson } from "./person.js";
-    createPerson();
-    // let el = "";
-    // persons.forEach((e) => {
-    //   return (el += `<button>${e.name}</button>`);
-    // });
 
-    // const renwu = document.querySelector(".renwu");
-    // const says = document.querySelector(".says");
-    // renwu.innerHTML = el;
-    // let btns = document.querySelectorAll("button");
-    // btns.forEach((e, i, a) => {
-    //   e.onclick = () => {
-    //     const saydiv = document.createElement("div");
-    //     saydiv.className = "saydiv";
-    //     saydiv.innerHTML = JSON.stringify(persons[i].say());
-    //     says.appendChild(saydiv);
-    //   };
-    // });
-  </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="indeed.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+  <div id="renwu"></div>
+  <div id="says"></div>
+</body>
+<script type="module">
+  import { createPerson } from './person.js'
+  async function render() {
+    let persons = await createPerson()
+    //  console.log(persons);
+    let els = []
+    Object.keys(persons).forEach(e => {
+      els.push(`
+     <button id=${e} class='hero'>${e}</button>
+     `)
+    })
+    $('#renwu').html(els.join(''))
+
+    // 点击说话
+    $('#renwu').on('click', '.hero', function (e) {
+      const person = persons[e.target.id].say()
+      $('#says').append(`
+        <div class='say'>
+          <div class="img">${person.name.slice(0, 1)}</div>
+          ${person.name}:
+        <span>${person.say}</span>
+        </div>
+      `)
+
+    })
+  }
+
+  render()
+</script>
+
 </html>
