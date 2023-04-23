@@ -1,1 +1,2 @@
+#忽略当前文件夹下的node_modules文件夹
 /node_modules/
